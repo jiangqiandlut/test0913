@@ -1,0 +1,140 @@
+{
+  "logicalTable" : {
+    "name" : "D_TIMES",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "TIME_ID" ],
+    "logicalColumns" : [ {
+      "name" : "CALENDAR_MONTH_DESC",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_TIMES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_TIMES.CALENDAR_MONTH_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Month"
+    }, {
+      "name" : "CALENDAR_QUARTER_DESC",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_TIMES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_TIMES.CALENDAR_QUARTER_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Quarter"
+    }, {
+      "name" : "CALENDAR_QUARTER_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_TIMES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_TIMES.CALENDAR_QUARTER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Quarter"
+    }, {
+      "name" : "CALENDAR_YEAR",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_TIMES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_TIMES.CALENDAR_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "year"
+    }, {
+      "name" : "TIME_ID",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_TIMES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_TIMES.TIME_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Time Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "D_TIMES",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MyDatabase.SH.D_TIMES" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Time Total",
+      "logicalLevels" : [ {
+        "name" : "Time Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "year",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "CALENDAR_YEAR" ],
+        "displayKey" : "CALENDAR_YEAR",
+        "chronologicalKey" : [ "CALENDAR_YEAR" ]
+      }, {
+        "name" : "Quarter",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "CALENDAR_QUARTER_DESC" ],
+        "displayKey" : "CALENDAR_QUARTER_DESC",
+        "additionalKeys" : [ [ "CALENDAR_QUARTER_ID" ] ],
+        "chronologicalKey" : [ "CALENDAR_QUARTER_DESC" ]
+      }, {
+        "name" : "Month",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "CALENDAR_MONTH_DESC" ],
+        "displayKey" : "CALENDAR_MONTH_DESC",
+        "chronologicalKey" : [ "CALENDAR_MONTH_DESC" ]
+      }, {
+        "name" : "Time Detail",
+        "numberOfElements" : 1826,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "TIME_ID" ],
+        "displayKey" : "TIME_ID",
+        "chronologicalKey" : [ "TIME_ID" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "H1",
+        "levels" : [ "Time Total", "year", "Quarter", "Month", "Time Detail" ]
+      } ]
+    }
+  }
+}

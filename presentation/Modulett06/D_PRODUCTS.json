@@ -1,0 +1,50 @@
+{
+  "presentationTable" : {
+    "name" : "D_PRODUCTS",
+    "presentationColumns" : [ {
+      "name" : "PROD_CATEGORY",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_PRODUCTS.PROD_CATEGORY"
+    }, {
+      "name" : "PROD_CATEGORY_ID",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_PRODUCTS.PROD_CATEGORY_ID"
+    }, {
+      "name" : "PROD_ID",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_PRODUCTS.PROD_ID"
+    }, {
+      "name" : "PROD_NAME",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_PRODUCTS.PROD_NAME"
+    }, {
+      "name" : "PROD_SUBCATEGORY",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_PRODUCTS.PROD_SUBCATEGORY"
+    }, {
+      "name" : "PROD_SUBCATEGORY_ID",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_PRODUCTS.PROD_SUBCATEGORY_ID"
+    }, {
+      "name" : "PROD_TOTAL",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_PRODUCTS.PROD_TOTAL"
+    }, {
+      "name" : "PROD_TOTAL_ID",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_PRODUCTS.PROD_TOTAL_ID"
+    } ],
+    "hierarchies" : [ {
+      "name" : "H1",
+      "sourceLogicalTable" : "logicalTable:Modulett01.D_PRODUCTS",
+      "levels" : [ {
+        "name" : "Prod Total",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_PRODUCTS.Prod Total"
+      }, {
+        "name" : "Prod Category",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_PRODUCTS.Prod Category",
+        "displayColumn" : "presentationColumn:Modulett06.D_PRODUCTS.PROD_CATEGORY"
+      }, {
+        "name" : "Prod Subcategory",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_PRODUCTS.Prod Subcategory",
+        "displayColumn" : "presentationColumn:Modulett06.D_PRODUCTS.PROD_SUBCATEGORY"
+      }, {
+        "name" : "Prod Detail",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_PRODUCTS.Prod Detail",
+        "displayColumn" : "presentationColumn:Modulett06.D_PRODUCTS.PROD_NAME"
+      } ]
+    } ]
+  }
+}

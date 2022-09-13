@@ -1,0 +1,141 @@
+{
+  "logicalTable" : {
+    "name" : "D_CHANNELS",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "CHANNEL_ID" ],
+    "logicalColumns" : [ {
+      "name" : "CHANNEL_TOTAL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CHANNELS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CHANNELS.CHANNEL_TOTAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Total"
+    }, {
+      "name" : "CHANNEL_TOTAL_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CHANNELS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CHANNELS.CHANNEL_TOTAL_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Total"
+    }, {
+      "name" : "CHANNEL_CLASS",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CHANNELS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CHANNELS.CHANNEL_CLASS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Class"
+    }, {
+      "name" : "CHANNEL_CLASS_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CHANNELS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CHANNELS.CHANNEL_CLASS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Class"
+    }, {
+      "name" : "CHANNEL_DESC",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CHANNELS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CHANNELS.CHANNEL_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Detail"
+    }, {
+      "name" : "CHANNEL_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CHANNELS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CHANNELS.CHANNEL_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "D_CHANNELS",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MyDatabase.SH.D_CHANNELS" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false,
+        "additionalKeys" : [ [ "CHANNEL_TOTAL", "CHANNEL_TOTAL_ID" ] ]
+      }, {
+        "name" : "Detail",
+        "numberOfElements" : 5,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "CHANNEL_DESC" ],
+        "displayKey" : "CHANNEL_DESC",
+        "additionalKeys" : [ [ "CHANNEL_ID" ] ]
+      }, {
+        "name" : "Class",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "CHANNEL_CLASS" ],
+        "displayKey" : "CHANNEL_CLASS",
+        "additionalKeys" : [ [ "CHANNEL_CLASS_ID" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "H1",
+        "levels" : [ "Total", "Class", "Detail" ]
+      } ]
+    }
+  }
+}

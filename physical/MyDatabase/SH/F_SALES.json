@@ -1,0 +1,44 @@
+{
+  "physicalTable" : {
+    "name" : "F_SALES",
+    "sourceTable" : "physicalTable:MyDatabase.SH.SALES",
+    "overrideSourceCacheSetting" : false,
+    "joins" : [ {
+      "rightTable" : "physicalTable:MyDatabase.SH.D_CUSTOMERS",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.SH.F_SALES.CUST_ID",
+        "rightColumn" : "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_ID"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    }, {
+      "rightTable" : "physicalTable:MyDatabase.SH.D_PRODUCTS",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.SH.F_SALES.PROD_ID",
+        "rightColumn" : "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_ID"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    }, {
+      "rightTable" : "physicalTable:MyDatabase.SH.D_TIMES",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.SH.F_SALES.TIME_ID",
+        "rightColumn" : "physicalColumn:MyDatabase.SH.D_TIMES.TIME_ID"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    }, {
+      "rightTable" : "physicalTable:MyDatabase.SH.D_CHANNELS",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.SH.F_SALES.CHANNEL_ID",
+        "rightColumn" : "physicalColumn:MyDatabase.SH.D_CHANNELS.CHANNEL_ID"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    } ]
+  }
+}

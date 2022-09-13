@@ -1,0 +1,7 @@
+{
+  "physicalTable" : {
+    "name" : "D_CHANNELS",
+    "sourceTable" : "physicalTable:MyDatabase.SH.CHANNELS",
+    "overrideSourceCacheSetting" : false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "presentationTable" : {
+    "name" : "D_TIMES",
+    "presentationColumns" : [ {
+      "name" : "CALENDAR_MONTH_DESC",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_TIMES.CALENDAR_MONTH_DESC"
+    }, {
+      "name" : "CALENDAR_QUARTER_DESC",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_TIMES.CALENDAR_QUARTER_DESC"
+    }, {
+      "name" : "CALENDAR_QUARTER_ID",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_TIMES.CALENDAR_QUARTER_ID"
+    }, {
+      "name" : "CALENDAR_YEAR",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_TIMES.CALENDAR_YEAR"
+    }, {
+      "name" : "TIME_ID",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.D_TIMES.TIME_ID"
+    } ],
+    "hierarchies" : [ {
+      "name" : "H1",
+      "sourceLogicalTable" : "logicalTable:Modulett01.D_TIMES",
+      "levels" : [ {
+        "name" : "Time Total",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_TIMES.Time Total"
+      }, {
+        "name" : "year",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_TIMES.year",
+        "displayColumn" : "presentationColumn:Modulett06.D_TIMES.CALENDAR_YEAR"
+      }, {
+        "name" : "Quarter",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_TIMES.Quarter",
+        "displayColumn" : "presentationColumn:Modulett06.D_TIMES.CALENDAR_QUARTER_DESC"
+      }, {
+        "name" : "Month",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_TIMES.Month",
+        "displayColumn" : "presentationColumn:Modulett06.D_TIMES.CALENDAR_MONTH_DESC"
+      }, {
+        "name" : "Time Detail",
+        "sourceLogicalLevel" : "logicalLevel:Modulett01.D_TIMES.Time Detail",
+        "displayColumn" : "presentationColumn:Modulett06.D_TIMES.TIME_ID"
+      } ]
+    } ]
+  }
+}

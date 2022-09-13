@@ -1,0 +1,12 @@
+{
+  "presentationTable" : {
+    "name" : "F_SALES",
+    "presentationColumns" : [ {
+      "name" : "QUANTITY_SOLD",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.F_SALES.QUANTITY_SOLD"
+    }, {
+      "name" : "AMOUNT_SOLD",
+      "sourceLogicalColumn" : "logicalColumn:Modulett01.F_SALES.AMOUNT_SOLD"
+    } ]
+  }
+}

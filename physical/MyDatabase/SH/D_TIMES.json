@@ -1,0 +1,7 @@
+{
+  "physicalTable" : {
+    "name" : "D_TIMES",
+    "sourceTable" : "physicalTable:MyDatabase.SH.TIMES",
+    "overrideSourceCacheSetting" : false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "physicalTable" : {
+    "name" : "D_CUSTOMERS",
+    "sourceTable" : "physicalTable:MyDatabase.SH.CUSTOMERS",
+    "overrideSourceCacheSetting" : false
+  }
+}

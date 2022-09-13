@@ -1,0 +1,17 @@
+{
+  "subjectArea" : {
+    "name" : "Modulett06",
+    "sourceBusinessModel" : "businessModel:Modulett01",
+    "tableOrder" : [ {
+      "name" : "presentationTable:Modulett06.D_CHANNELS"
+    }, {
+      "name" : "presentationTable:Modulett06.D_CUSTOMERS"
+    }, {
+      "name" : "presentationTable:Modulett06.D_PRODUCTS"
+    }, {
+      "name" : "presentationTable:Modulett06.D_TIMES"
+    }, {
+      "name" : "presentationTable:Modulett06.F_SALES"
+    } ]
+  }
+}

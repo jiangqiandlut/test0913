@@ -1,0 +1,204 @@
+{
+  "logicalTable" : {
+    "name" : "D_CUSTOMERS",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "CUST_ID" ],
+    "logicalColumns" : [ {
+      "name" : "CUST_TOTAL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_TOTAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Cust Total"
+    }, {
+      "name" : "CUST_TOTAL_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_TOTAL_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Cust Total"
+    }, {
+      "name" : "CUST_STATE_PROVINCE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_STATE_PROVINCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "State"
+    }, {
+      "name" : "CUST_STATE_PROVINCE_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_STATE_PROVINCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "State"
+    }, {
+      "name" : "CUST_CITY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_CITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "City"
+    }, {
+      "name" : "CUST_CITY_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_CITY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "City"
+    }, {
+      "name" : "CUST_NAME",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1||' '||%2",
+          "expressionObjects" : [ "logicalColumn:Modulett01.D_CUSTOMERS.CUST_LAST_NAME", "logicalColumn:Modulett01.D_CUSTOMERS.CUST_FIRST_NAME" ]
+        }
+      }
+    }, {
+      "name" : "CUST_LAST_NAME",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_LAST_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Cust Detail"
+    }, {
+      "name" : "CUST_FIRST_NAME",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_FIRST_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Cust Detail"
+    }, {
+      "name" : "CUST_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_CUSTOMERS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_CUSTOMERS.CUST_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Cust Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "D_CUSTOMERS",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MyDatabase.SH.D_CUSTOMERS" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Cust Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Cust Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false,
+        "additionalKeys" : [ [ "CUST_TOTAL", "CUST_TOTAL_ID" ] ]
+      }, {
+        "name" : "State",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "CUST_STATE_PROVINCE" ],
+        "displayKey" : "CUST_STATE_PROVINCE",
+        "additionalKeys" : [ [ "CUST_STATE_PROVINCE_ID" ] ]
+      }, {
+        "name" : "City",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "CUST_CITY" ],
+        "displayKey" : "CUST_CITY",
+        "additionalKeys" : [ [ "CUST_CITY_ID" ] ]
+      }, {
+        "name" : "Cust Detail",
+        "numberOfElements" : 55500,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "CUST_ID" ],
+        "displayKey" : "CUST_ID"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "H1",
+        "levels" : [ "Cust Total", "State", "City", "Cust Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "logicalTable" : {
+    "name" : "D_PRODUCTS",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "PROD_ID" ],
+    "logicalColumns" : [ {
+      "name" : "PROD_CATEGORY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_PRODUCTS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Prod Category"
+    }, {
+      "name" : "PROD_CATEGORY_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_PRODUCTS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_CATEGORY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Prod Category"
+    }, {
+      "name" : "PROD_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_PRODUCTS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Prod Detail"
+    }, {
+      "name" : "PROD_NAME",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_PRODUCTS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Prod Detail"
+    }, {
+      "name" : "PROD_SUBCATEGORY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_PRODUCTS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_SUBCATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Prod Subcategory"
+    }, {
+      "name" : "PROD_SUBCATEGORY_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_PRODUCTS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_SUBCATEGORY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Prod Subcategory"
+    }, {
+      "name" : "PROD_TOTAL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_PRODUCTS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_TOTAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Prod Total"
+    }, {
+      "name" : "PROD_TOTAL_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_PRODUCTS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.SH.D_PRODUCTS.PROD_TOTAL_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Prod Total"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "D_PRODUCTS",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MyDatabase.SH.D_PRODUCTS" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Prod Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Prod Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false,
+        "additionalKeys" : [ [ "PROD_TOTAL", "PROD_TOTAL_ID" ] ]
+      }, {
+        "name" : "Prod Category",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "PROD_CATEGORY" ],
+        "displayKey" : "PROD_CATEGORY",
+        "additionalKeys" : [ [ "PROD_CATEGORY_ID" ] ]
+      }, {
+        "name" : "Prod Subcategory",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "PROD_SUBCATEGORY" ],
+        "displayKey" : "PROD_SUBCATEGORY",
+        "additionalKeys" : [ [ "PROD_SUBCATEGORY_ID" ] ]
+      }, {
+        "name" : "Prod Detail",
+        "numberOfElements" : 72,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "PROD_NAME" ],
+        "displayKey" : "PROD_NAME",
+        "additionalKeys" : [ [ "PROD_ID" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "H1",
+        "levels" : [ "Prod Total", "Prod Category", "Prod Subcategory", "Prod Detail" ]
+      } ]
+    }
+  }
+}
